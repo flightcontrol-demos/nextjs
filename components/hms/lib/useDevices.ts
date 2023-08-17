@@ -55,10 +55,14 @@ export const useDevices = (): useDevicesResult => {
     [DeviceType.videoInput]: sdkSelectedDevices.videoInputDeviceId
   };
 
+  // eslint-disable-next-line
+  // @ts-ignore
   if (!isAllowedToPublish.video && allDevices.videoInput === []) {
     delete allDevices[DeviceType.videoInput];
     delete selectedDeviceIDs[DeviceType.videoInput];
   }
+  // eslint-disable-next-line
+  // @ts-ignore
   if (!isAllowedToPublish.audio && allDevices.audioInput === []) {
     delete allDevices[DeviceType.audioInput];
     delete selectedDeviceIDs[DeviceType.audioInput];
