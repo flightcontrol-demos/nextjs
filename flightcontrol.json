@@ -1,0 +1,40 @@
+{
+  "$schema": "https://app.flightcontrol.dev/schema.json",
+  "envVariables": {},
+  "environments": [
+    {
+      "name": "Next.js Demo",
+      "region": "us-east-1",
+      "source": {"pr": false, "branch": "main", "trigger": "push"},
+      "services": [
+        {
+          "id": "nextjs-app-iog5nd",
+          "name": "Next.js App",
+          "buildType": "nixpacks",
+          "cpu": 0.25,
+          "memory": 0.5,
+          "containerInsights": false,
+          "minInstances": 1,
+          "maxInstances": 1,
+          "versionHistoryCount": 10,
+          "basePath": ".",
+          "dockerfilePath": "Dockerfile",
+          "dockerContext": ".",
+          "envVariables": {},
+          "autoscaling": {
+            "cpuThreshold": 70,
+            "memoryThreshold": 70,
+            "cooldownTimerSecs": 300,
+            "requestsPerTarget": 500
+          },
+          "type": "fargate",
+          "healthCheckPath": "/",
+          "enableCloudfrontSwr": true,
+          "port": 3000
+        }
+      ],
+      "envVariables": {},
+      "id": "nextjs-demo"
+    }
+  ]
+}
