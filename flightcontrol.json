@@ -4,7 +4,7 @@
     {
       "id": "production-fcjson",
       "name": "Production",
-      "region": "eu-central-1",
+      "region": "eu-west-2",
       "source": {"pr": false, "branch": "main", "trigger": "push"},
       "services": [
         {
