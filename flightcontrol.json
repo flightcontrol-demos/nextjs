@@ -2,13 +2,13 @@
   "envVariables": {},
   "environments": [
     {
-      "id": "production-WIMOx1",
+      "id": "production-fcjson",
       "name": "Production",
       "region": "eu-central-1",
       "source": {"pr": false, "branch": "main", "trigger": "push"},
       "services": [
         {
-          "id": "nextjs-app-kjWWp2",
+          "id": "nextjs-app-fcjson",
           "cpu": 0.5,
           "name": "Next.js App",
           "port": 3000,
@@ -32,7 +32,7 @@
           "includeEnvVariablesInBuild": true
         },
         {
-          "id": "scheduler-UwIrFE",
+          "id": "scheduler-fcjson",
           "cpu": 0.5,
           "jobs": {
             "job-1": {
