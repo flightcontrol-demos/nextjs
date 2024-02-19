@@ -1,40 +1,59 @@
 {
-  "$schema": "https://app.flightcontrol.dev/schema.json",
   "envVariables": {},
   "environments": [
     {
-      "name": "Next.js Demo",
-      "region": "us-east-1",
+      "id": "production-WIMOx1",
+      "name": "Production",
+      "region": "eu-central-1",
       "source": {"pr": false, "branch": "main", "trigger": "push"},
       "services": [
         {
-          "id": "nextjs-app-iog5nd",
+          "id": "nextjs-app-kjWWp2",
+          "cpu": 0.5,
           "name": "Next.js App",
-          "buildType": "nixpacks",
-          "cpu": 0.25,
-          "memory": 0.5,
-          "containerInsights": false,
-          "minInstances": 1,
-          "maxInstances": 1,
-          "versionHistoryCount": 10,
+          "port": 3000,
+          "type": "fargate",
+          "memory": 1,
           "basePath": ".",
-          "dockerfilePath": "Dockerfile",
-          "dockerContext": ".",
-          "envVariables": {},
+          "buildType": "nixpacks",
           "autoscaling": {
             "cpuThreshold": 70,
             "memoryThreshold": 70,
             "cooldownTimerSecs": 300,
             "requestsPerTarget": 500
           },
-          "type": "fargate",
+          "envVariables": {},
+          "maxInstances": 1,
+          "minInstances": 1,
           "healthCheckPath": "/",
-          "enableCloudfrontSwr": true,
-          "port": 3000
+          "containerInsights": false,
+          "enableCloudfrontSwr": false,
+          "versionHistoryCount": 10,
+          "includeEnvVariablesInBuild": true
+        },
+        {
+          "id": "scheduler-UwIrFE",
+          "cpu": 0.5,
+          "jobs": {
+            "job-1": {
+              "cpu": 0.25,
+              "memory": 0.5,
+              "schedule": "manual",
+              "startCommand": "echo 'No start command specified'"
+            }
+          },
+          "name": "Scheduler",
+          "type": "fargate-scheduler",
+          "memory": 1,
+          "basePath": ".",
+          "buildType": "nixpacks",
+          "envVariables": {},
+          "containerInsights": false,
+          "versionHistoryCount": 10,
+          "includeEnvVariablesInBuild": true
         }
       ],
-      "envVariables": {},
-      "id": "nextjs-demo"
+      "envVariables": {}
     }
   ]
 }
