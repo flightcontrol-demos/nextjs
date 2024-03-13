@@ -13,7 +13,8 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "license": "addlicense -l apache -c 'Vercel Inc.' components/**/* lib/**/* pages/**/* styles/**/* *.ts *.js"
+    "license": "addlicense -l apache -c 'Vercel Inc.' components/**/* lib/**/* pages/**/* styles/**/* *.ts *.js",
+    "makeLogLines": "node makeLogLines.js"
   },
   "dependencies": {
     "@100mslive/react-icons": "^0.0.6",
