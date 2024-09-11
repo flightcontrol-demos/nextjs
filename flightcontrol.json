@@ -9,11 +9,11 @@
       "services": [
         {
           "id": "nextjs-app-fcjson",
-          "cpu": 2,
+          "cpu": 1,
           "name": "Next.js App",
           "port": 3000,
           "type": "fargate",
-          "memory": 4,
+          "memory": 2,
           "basePath": ".",
           "buildType": "nixpacks",
           "autoscaling": {
